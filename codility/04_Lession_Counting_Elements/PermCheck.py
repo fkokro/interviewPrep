@@ -48,11 +48,17 @@ each element of array A is an integer within the range [1..1,000,000,000].
 import unittest
 
 def solution(A):
-    pass
+    A.sort()
+
+    for idx, value in enumerate(A):
+        if idx + 1 != value:
+            return(0)
+    return(1)
 
 class testSolution(unittest.TestCase):
     def test_solution(self):
-        pass
+        self.assertEqual(solution([4,1,3,2]), 1)
+        self.assertEqual(solution([4,1,3]), 0)
     
 if __name__ == '__main__':
     unittest.main()
