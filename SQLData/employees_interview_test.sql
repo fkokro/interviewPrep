@@ -147,3 +147,5 @@ or r.dept_name = 'Development'
 select last_name, count(last_name) as frequeny from employees
 group by last_name
 order by frequeny desc
+--9. Calculate the year over year salary
+WITH sales_product_year AS (  SELECT    product,    year(ship_date) as year,    SUM(price) as total_amt  FROM    item_sales  GROUP BY    product, year )
